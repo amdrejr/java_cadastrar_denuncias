@@ -10,12 +10,9 @@ import java.util.function.Consumer;
 import javax.swing.JLabel;
 import javax.swing.table.DefaultTableModel;
 
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-
 /**
  *
- * @author André
+ * @author André Jr Mello
  */
 public class Form1 extends javax.swing.JFrame {
 
