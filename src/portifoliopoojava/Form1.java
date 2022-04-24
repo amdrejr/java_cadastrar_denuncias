@@ -59,7 +59,6 @@ public class Form1 extends javax.swing.JFrame {
         txtErro = new javax.swing.JLabel();
         txtSenhaUser = new javax.swing.JPasswordField();
 
-        jFrameDenuncias.setPreferredSize(new java.awt.Dimension(650, 460));
         jFrameDenuncias.setSize(new java.awt.Dimension(650, 460));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
@@ -105,9 +104,7 @@ public class Form1 extends javax.swing.JFrame {
         );
 
         jFrameCadastrar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jFrameCadastrar.setMaximumSize(new java.awt.Dimension(820, 480));
         jFrameCadastrar.setMinimumSize(new java.awt.Dimension(820, 480));
-        jFrameCadastrar.setPreferredSize(new java.awt.Dimension(820, 480));
         jFrameCadastrar.setResizable(false);
         jFrameCadastrar.setSize(new java.awt.Dimension(820, 480));
 
@@ -223,6 +220,7 @@ public class Form1 extends javax.swing.JFrame {
             }
         });
 
+        txtSenhaUser.setMaximumSize(new java.awt.Dimension(64, 22));
         txtSenhaUser.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtSenhaUserActionPerformed(evt);
@@ -249,13 +247,10 @@ public class Form1 extends javax.swing.JFrame {
                                 .addComponent(jLabel5)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(btnLogar)
-                                            .addComponent(txtErro))
-                                        .addGap(70, 70, 70))
-                                    .addComponent(txtSenhaUser))))))
-                .addContainerGap(87, Short.MAX_VALUE))
+                                    .addComponent(btnLogar)
+                                    .addComponent(txtSenhaUser, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(txtErro, javax.swing.GroupLayout.Alignment.LEADING))))
+                .addContainerGap(75, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -269,12 +264,12 @@ public class Form1 extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
-                    .addComponent(txtSenhaUser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtSenhaUser, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(btnLogar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(txtErro)
-                .addContainerGap(116, Short.MAX_VALUE))
+                .addContainerGap(98, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -322,19 +317,22 @@ public class Form1 extends javax.swing.JFrame {
         tabela.addRow(dados);
     }//GEN-LAST:event_btnCadastrarActionPerformed
 
-    private void txtLoginUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtLoginUserActionPerformed
+    private void txtSenhaUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSenhaUserActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtLoginUserActionPerformed
+    }//GEN-LAST:event_txtSenhaUserActionPerformed
 
-    
+    private void txtErroAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_txtErroAncestorAdded
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtErroAncestorAdded
+
     private void btnLogarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogarActionPerformed
-         
+
         if(Usuarios.cadastrados.containsKey(txtLoginUser.getText()))
-            //Conferindo se o usuario tem no map
+        //Conferindo se o usuario tem no map
         {
             if(Usuarios.cadastrados.get(txtLoginUser.getText()).equals(txtSenhaUser.getText())) {
                 //Coferindo a senha
-                txtErro.setForeground(new java.awt.Color(0, 155, 0));              
+                txtErro.setForeground(new java.awt.Color(0, 155, 0));
                 txtErro.setText("Conectado com sucesso!");
                 //sleep pra ficar bonito
                 jFrameCadastrar.setVisible(true);
@@ -347,14 +345,11 @@ public class Form1 extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnLogarActionPerformed
 
-    private void txtErroAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_txtErroAncestorAdded
+    private void txtLoginUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtLoginUserActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtErroAncestorAdded
+    }//GEN-LAST:event_txtLoginUserActionPerformed
 
-    private void txtSenhaUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSenhaUserActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtSenhaUserActionPerformed
-
+    
     /**
      * @param args the command line arguments
      */
