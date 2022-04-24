@@ -4,11 +4,13 @@
  */
 package portifoliopoojava;
 
-import java.util.List;
 import java.util.ArrayList;
 import java.util.function.Consumer;
-import javax.swing.JLabel;
 import javax.swing.table.DefaultTableModel;
+
+//DateTime
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 /**
  *
@@ -26,6 +28,7 @@ public class Form1 extends javax.swing.JFrame {
     
     // variaveis
     ArrayList<String> listaDenuncias = new ArrayList<>();
+    DateTimeFormatter dataHora = DateTimeFormatter.ofPattern("dd/MM/yyyy - HH:mm:ss");
    
 
     /**
@@ -41,11 +44,20 @@ public class Form1 extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tabelaDenuncias = new javax.swing.JTable();
+        jFrameCadastrar = new javax.swing.JFrame();
         jLabel1 = new javax.swing.JLabel();
         btnCadastrar = new javax.swing.JButton();
         txtDenuncia = new javax.swing.JTextField();
         btnDesconectar = new javax.swing.JButton();
         btnVerDenuncias = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        txtLoginUser = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        btnLogar = new javax.swing.JButton();
+        txtErro = new javax.swing.JLabel();
+        txtSenhaUser = new javax.swing.JPasswordField();
 
         jFrameDenuncias.setPreferredSize(new java.awt.Dimension(650, 460));
         jFrameDenuncias.setSize(new java.awt.Dimension(650, 460));
@@ -63,6 +75,8 @@ public class Form1 extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(tabelaDenuncias);
         if (tabelaDenuncias.getColumnModel().getColumnCount() > 0) {
+            tabelaDenuncias.getColumnModel().getColumn(0).setMaxWidth(80);
+            tabelaDenuncias.getColumnModel().getColumn(1).setPreferredWidth(120);
             tabelaDenuncias.getColumnModel().getColumn(2).setMinWidth(300);
         }
 
@@ -90,14 +104,19 @@ public class Form1 extends javax.swing.JFrame {
                 .addContainerGap(80, Short.MAX_VALUE))
         );
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        jFrameCadastrar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jFrameCadastrar.setMaximumSize(new java.awt.Dimension(820, 480));
+        jFrameCadastrar.setMinimumSize(new java.awt.Dimension(820, 480));
+        jFrameCadastrar.setPreferredSize(new java.awt.Dimension(820, 480));
+        jFrameCadastrar.setResizable(false);
+        jFrameCadastrar.setSize(new java.awt.Dimension(820, 480));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
         jLabel1.setText("DENUNCIAR OCORRÊNCIAS");
         jLabel1.setAlignmentX(0.5F);
 
         btnCadastrar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        btnCadastrar.setText("CADASTRAR DENUNCIA");
+        btnCadastrar.setText("CADASTRAR DENÚNCIA");
         btnCadastrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCadastrarActionPerformed(evt);
@@ -129,43 +148,150 @@ public class Form1 extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+        javax.swing.GroupLayout jFrameCadastrarLayout = new javax.swing.GroupLayout(jFrameCadastrar.getContentPane());
+        jFrameCadastrar.getContentPane().setLayout(jFrameCadastrarLayout);
+        jFrameCadastrarLayout.setHorizontalGroup(
+            jFrameCadastrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jFrameCadastrarLayout.createSequentialGroup()
                 .addGap(19, 19, 19)
                 .addComponent(btnDesconectar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnVerDenuncias)
                 .addGap(19, 19, 19))
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
+            .addGroup(jFrameCadastrarLayout.createSequentialGroup()
+                .addGroup(jFrameCadastrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jFrameCadastrarLayout.createSequentialGroup()
                         .addGap(88, 88, 88)
                         .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
+                    .addGroup(jFrameCadastrarLayout.createSequentialGroup()
                         .addGap(298, 298, 298)
                         .addComponent(btnCadastrar))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(253, 253, 253)
+                    .addGroup(jFrameCadastrarLayout.createSequentialGroup()
+                        .addGap(246, 246, 246)
                         .addComponent(txtDenuncia, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(99, Short.MAX_VALUE))
+                .addGap(99, 99, 99))
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+        jFrameCadastrarLayout.setVerticalGroup(
+            jFrameCadastrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jFrameCadastrarLayout.createSequentialGroup()
                 .addGap(18, 18, 18)
                 .addComponent(jLabel1)
                 .addGap(66, 66, 66)
                 .addComponent(txtDenuncia, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnCadastrar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 82, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGap(82, 82, 82)
+                .addGroup(jFrameCadastrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnDesconectar)
                     .addComponent(btnVerDenuncias))
-                .addGap(23, 23, 23))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jPanel1.setPreferredSize(new java.awt.Dimension(500, 400));
+
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
+        jLabel3.setText("TELA DE LOGIN");
+
+        jLabel4.setText("Usuário");
+
+        txtLoginUser.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtLoginUserActionPerformed(evt);
+            }
+        });
+
+        jLabel5.setText("Senha");
+
+        btnLogar.setText("Fazer Login");
+        btnLogar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLogarActionPerformed(evt);
+            }
+        });
+
+        txtErro.setForeground(new java.awt.Color(255, 0, 0));
+        txtErro.setText("     ");
+        txtErro.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
+                txtErroAncestorAdded(evt);
+            }
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+        });
+
+        txtSenhaUser.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtSenhaUserActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(65, 65, 65)
+                        .addComponent(jLabel3))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(133, 133, 133)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel4)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtLoginUser, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel5)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(btnLogar)
+                                            .addComponent(txtErro))
+                                        .addGap(70, 70, 70))
+                                    .addComponent(txtSenhaUser))))))
+                .addContainerGap(87, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(jLabel3)
+                .addGap(68, 68, 68)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtLoginUser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(txtSenhaUser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(btnLogar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(txtErro)
+                .addContainerGap(116, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 488, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 388, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
@@ -176,7 +302,8 @@ public class Form1 extends javax.swing.JFrame {
     }//GEN-LAST:event_txtDenunciaActionPerformed
 
     private void btnDesconectarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDesconectarActionPerformed
-        // TODO add your handling code here:
+        dispose();
+        
     }//GEN-LAST:event_btnDesconectarActionPerformed
 
     private void btnVerDenunciasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerDenunciasActionPerformed
@@ -190,10 +317,43 @@ public class Form1 extends javax.swing.JFrame {
         String denunciaTexto = txtDenuncia.getText();
         listaDenuncias.add(denunciaTexto);
         txtDenuncia.setText("");
-        Object[] dados = {"usuário", "17:30", denunciaTexto};
+        Object[] dados = {txtLoginUser.getText(), dataHora.format(LocalDateTime.now()), denunciaTexto};
         DefaultTableModel tabela = (DefaultTableModel)tabelaDenuncias.getModel();
         tabela.addRow(dados);
     }//GEN-LAST:event_btnCadastrarActionPerformed
+
+    private void txtLoginUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtLoginUserActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtLoginUserActionPerformed
+
+    
+    private void btnLogarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogarActionPerformed
+         
+        if(Usuarios.cadastrados.containsKey(txtLoginUser.getText()))
+            //Conferindo se o usuario tem no map
+        {
+            if(Usuarios.cadastrados.get(txtLoginUser.getText()).equals(txtSenhaUser.getText())) {
+                //Coferindo a senha
+                txtErro.setForeground(new java.awt.Color(0, 155, 0));              
+                txtErro.setText("Conectado com sucesso!");
+                //sleep pra ficar bonito
+                jFrameCadastrar.setVisible(true);
+                dispose();
+            } else {
+                txtErro.setText("A senha está incorreta!");
+            }
+        } else {
+            txtErro.setText("Usuário não cadastrado!");
+        }
+    }//GEN-LAST:event_btnLogarActionPerformed
+
+    private void txtErroAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_txtErroAncestorAdded
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtErroAncestorAdded
+
+    private void txtSenhaUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSenhaUserActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtSenhaUserActionPerformed
 
     /**
      * @param args the command line arguments
@@ -233,13 +393,22 @@ public class Form1 extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCadastrar;
     private javax.swing.JButton btnDesconectar;
+    private javax.swing.JButton btnLogar;
     private javax.swing.JButton btnVerDenuncias;
+    private javax.swing.JFrame jFrameCadastrar;
     private javax.swing.JFrame jFrameDenuncias;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tabelaDenuncias;
     private javax.swing.JTextField txtDenuncia;
+    private javax.swing.JLabel txtErro;
+    private javax.swing.JTextField txtLoginUser;
+    private javax.swing.JPasswordField txtSenhaUser;
     // End of variables declaration//GEN-END:variables
 
     private Consumer<? super String> print(ArrayList<String> listaDenuncias) {
