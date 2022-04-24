@@ -49,6 +49,7 @@ public class Form1 extends javax.swing.JFrame {
         txtErro = new javax.swing.JLabel();
         txtSenhaUser = new javax.swing.JPasswordField();
 
+        jFrameDenuncias.setPreferredSize(new java.awt.Dimension(650, 460));
         jFrameDenuncias.setSize(new java.awt.Dimension(650, 460));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
@@ -94,7 +95,9 @@ public class Form1 extends javax.swing.JFrame {
         );
 
         jFrameCadastrar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jFrameCadastrar.setMaximumSize(new java.awt.Dimension(820, 480));
         jFrameCadastrar.setMinimumSize(new java.awt.Dimension(820, 480));
+        jFrameCadastrar.setPreferredSize(new java.awt.Dimension(820, 480));
         jFrameCadastrar.setResizable(false);
         jFrameCadastrar.setSize(new java.awt.Dimension(820, 480));
 
