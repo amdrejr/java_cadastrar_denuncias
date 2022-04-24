@@ -9,7 +9,7 @@ import java.util.Map;
 
 /**
  *
- * @author André Jr Mello
+ * @author Andre Jr Mello
  */
 public abstract class Usuarios {
 

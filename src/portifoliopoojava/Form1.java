@@ -14,7 +14,7 @@ import java.time.format.DateTimeFormatter;
 
 /**
  *
- * @author André Jr Mello
+ * @author Andre Jr Mello
  * 
  */
 public class Form1 extends javax.swing.JFrame {
@@ -63,14 +63,14 @@ public class Form1 extends javax.swing.JFrame {
         jFrameDenuncias.setSize(new java.awt.Dimension(650, 460));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
-        jLabel2.setText("DENÚNCIAS");
+        jLabel2.setText("DENUNCIAS");
 
         tabelaDenuncias.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Usuário", "Data", "Denúncia"
+                "Usuario", "Data", "Denuncia"
             }
         ));
         jScrollPane1.setViewportView(tabelaDenuncias);
@@ -112,11 +112,11 @@ public class Form1 extends javax.swing.JFrame {
         jFrameCadastrar.setSize(new java.awt.Dimension(820, 480));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
-        jLabel1.setText("DENUNCIAR OCORRÊNCIAS");
+        jLabel1.setText("DENUNCIAR OCORRENCIAS");
         jLabel1.setAlignmentX(0.5F);
 
         btnCadastrar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        btnCadastrar.setText("CADASTRAR DENÚNCIA");
+        btnCadastrar.setText("CADASTRAR DENUNCIA");
         btnCadastrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCadastrarActionPerformed(evt);
@@ -140,7 +140,7 @@ public class Form1 extends javax.swing.JFrame {
             }
         });
 
-        btnVerDenuncias.setText("VER DENÚNCIAS");
+        btnVerDenuncias.setText("VER DENUNCIAS");
         btnVerDenuncias.setToolTipText("");
         btnVerDenuncias.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -194,7 +194,7 @@ public class Form1 extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
         jLabel3.setText("TELA DE LOGIN");
 
-        jLabel4.setText("Usuário");
+        jLabel4.setText("Usuario");
 
         txtLoginUser.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
