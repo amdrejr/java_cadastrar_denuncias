@@ -48,7 +48,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="36" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="DEN&#xda;NCIAS"/>
+            <Property name="text" type="java.lang.String" value="DENUNCIAS"/>
           </Properties>
         </Component>
         <Container class="javax.swing.JScrollPane" name="jScrollPane1">
@@ -62,9 +62,9 @@
               <Properties>
                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                   <Table columnCount="3" rowCount="0">
-                    <Column editable="true" title="Usu&#xe1;rio" type="java.lang.Object"/>
+                    <Column editable="true" title="Usuario" type="java.lang.Object"/>
                     <Column editable="true" title="Data" type="java.lang.Object"/>
-                    <Column editable="true" title="Den&#xfa;ncia" type="java.lang.Object"/>
+                    <Column editable="true" title="Denuncia" type="java.lang.Object"/>
                   </Table>
                 </Property>
                 <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
@@ -169,7 +169,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="48" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="DENUNCIAR OCORR&#xca;NCIAS"/>
+            <Property name="text" type="java.lang.String" value="DENUNCIAR OCORRENCIAS"/>
             <Property name="alignmentX" type="float" value="0.5"/>
           </Properties>
         </Component>
@@ -178,7 +178,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="18" style="0"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="CADASTRAR DEN&#xda;NCIA"/>
+            <Property name="text" type="java.lang.String" value="CADASTRAR DENUNCIA"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCadastrarActionPerformed"/>
@@ -205,7 +205,7 @@
         </Component>
         <Component class="javax.swing.JButton" name="btnVerDenuncias">
           <Properties>
-            <Property name="text" type="java.lang.String" value="VER DEN&#xda;NCIAS"/>
+            <Property name="text" type="java.lang.String" value="VER DENUNCIAS"/>
             <Property name="toolTipText" type="java.lang.String" value=""/>
           </Properties>
           <Events>
@@ -335,7 +335,7 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel4">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Usu&#xe1;rio"/>
+            <Property name="text" type="java.lang.String" value="Usuario"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtLoginUser">
